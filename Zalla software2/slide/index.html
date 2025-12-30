@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        height: 300px;
+        width: 0;
+        scale: 0;
+        opacity: 0;
+        transition: s;
+    }
+    
+    .show{scale: 1;opacity: 1; width: 100%;}
+    .slider{display: flex;gap: 5px;}
+</style>
+<body>
+    <div class="hero">
+        <div class="slider">
+            <img class="show" src="/Zall photo/ecommerce.webp" alt="">
+            <img src="/Zall photo/OIP (1).webp" alt="">
+            <img src="/Zall photo/download (2).webp" alt="">
+        </div>
+        <button onclick="showPrevSlide()" class="next">prev</button>
+        <button onclick="showNextSlide()" class="prev">next</button>
+    </div>
+    <script>
+        const imgs = document.querySelectorAll("img");
+        let i = 0;
+        showNextSlide = function(){
+            imgs.forEach(img =>{
+                img.classList.remove("show")
+            })
+            i++;
+            if(i > 2){i = 0}
+            imgs[i].classList.add("show");
+        }
+
+        showPrevSlide = function(){
+            imgs.forEach(img =>{
+                img.classList.remove("show")
+            })
+            i--;
+            if(i < 0){i = imgs.length - 1}
+            imgs[i].classList.add("show");
+        }
+
+    </script>
+</body>
+</html>

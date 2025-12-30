@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Zalla Software</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .about-section {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            padding: 120px 0;
+        }
+
+        .about-img {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-img img {
+            border-radius: 20px;
+            box-shadow: var(--glass-shadow);
+            transition: transform 0.4s ease;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .skill-item i {
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 40px;
+            }
+
+            .skills-grid {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">ZALLA SOFTWARE</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="service.html" class="nav-link">Service</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><button id="signup-btn" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;">Sign
+                        Up</button></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sign Up Modal (Same as Index) -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <i class="fas fa-times close-modal"></i>
+            <h2>Join Zalla Software</h2>
+            <form class="signup-form">
+                <div class="form-group"><input type="text" class="form-input" placeholder="Full Name" required></div>
+                <div class="form-group"><input type="email" class="form-input" placeholder="Email Address" required>
+                </div>
+                <div class="form-group"><input type="password" class="form-input" placeholder="Password" required></div>
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <section class="container about-section">
+        <div class="about-text">
+            <h2>Who We Are</h2>
+            <p>Zalla Software is a premier technology solutions provider dedicated to empowering businesses and
+                individuals. With a deep commitment to excellence, we specialize in comprehensive software installation,
+                system maintenance, and digital recovery.</p>
+            <br>
+            <p>Our team blends technical expertise with a customer-first mindset, ensuring that every interaction
+                results in a seamless, optimized experience for your devices.</p>
+
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fas fa-check-circle"></i> System Optimization</div>
+                <div class="skill-item"><i class="fas fa-check-circle"></i> Data Security</div>
+                <div class="skill-item"><i class="fas fa-check-circle"></i> Round-the-clock Support</div>
+                <div class="skill-item"><i class="fas fa-check-circle"></i> Professional Recovery</div>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <a href="portfolio.html" class="btn btn-primary">See Our Work</a>
+            </div>
+        </div>
+
+        <div class="about-img">
+            <!-- Using the OS image as a placeholder reference if specific about image not generated yet, or use hero background differently -->
+            <img src="images/service_os_1766220560805.png" alt="Zalla Software Team"
+                style="width: 100%; object-fit: cover;">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 class="logo">ZALLA SOFTWARE</h3>
+                    <p>Providing top-tier software solutions and maintenance for individuals and businesses alike.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="service.html">OS Installation</a></li>
+                        <li><a href="service.html">Software Activation</a></li>
+                        <li><a href="service.html">Web Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-icons" style="margin-top: 0;">
+                        <a href="#" class="social-icon" style="width: 35px; height: 35px; font-size: 1rem;"><i
+                                class="fab fa-telegram-plane"></i></a>
+                        <a href="#" class="social-icon" style="width: 35px; height: 35px; font-size: 1rem;"><i
+                                class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Zalla Software. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

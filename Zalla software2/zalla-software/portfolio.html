@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Zalla Software</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Portfolio Header */
+        .page-header {
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        /* Projects Grid */
+        .projects-section {
+            padding: 40px 0 80px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.9s ease;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .project-img {
+            height: 200px;
+            background: #cbd5e1;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            transition: 0.5s;
+            width: 100%;
+        }
+
+        .project-img:hover {
+            transform: scale(1.05);
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            margin-bottom: 10px;
+        }
+
+        .tags span {
+            display: inline-block;
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            font-weight: 500;
+        }
+
+        /* Gallery (Horizontal Scroll) */
+        .gallery-section {
+            padding: 60px 0;
+            background: var(--bg-body);
+        }
+
+        .gallery-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .gallery-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .gallery-container::-webkit-scrollbar-track {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        .gallery-container::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        .gallery-item {
+            min-width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            background-color: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            flex-shrink: 0;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 80px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .quote-icon {
+            font-size: 2rem;
+            /* color: var(--primary-color); */
+            color: #ff0000;
+            opacity: 0.2;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .client-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            object-fit: cover;
+        }
+
+        .client-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .client-details h4 {
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .client-details span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">ZALLA SOFTWARE</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="service.html" class="nav-link">Service</a></li>
+                <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><button id="signup-btn" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;">Sign
+                        Up</button></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sign Up Modal -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <i class="fas fa-times close-modal"></i>
+            <h2>Join Zalla Software</h2>
+            <form class="signup-form">
+                <div class="form-group"><input type="text" class="form-input" placeholder="Full Name" required></div>
+                <div class="form-group"><input type="email" class="form-input" placeholder="Email Address" required>
+                </div>
+                <div class="form-group"><input type="password" class="form-input" placeholder="Password" required></div>
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div class="container page-header">
+        <h1>Our Recent Work</h1>
+        <p>Explore some of the projects we've delivered with excellence.</p>
+    </div>
+
+    <!-- Projects -->
+    <section class="container projects-section">
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img" style="background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <img src="images/dash.webp" alt="">
+                </div>
+                <div class="project-info">
+                    <h3>Business Dashboard</h3>
+                    <p style="margin-bottom: 15px; font-size: 0.9rem; color: var(--text-muted);">A comprehensive
+                        analytics dashboard for a retail chain.</p>
+                    <div class="tags"><span>Web App</span><span>Analytics</span></div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img"
+                    style="background-image: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);">
+                    <img src="images/ecommerce.webp" alt="">
+                </div>
+                <div class="project-info">
+                    <h3>E-commerce Platform</h3>
+                    <p style="margin-bottom: 15px; font-size: 0.9rem; color: var(--text-muted);">Full-stack online store
+                        with payment integration.</p>
+                    <div class="tags"><span>E-commerce</span><span>Design</span></div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img" style="background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);">
+                    <img src="images/corapate.webp" alt="">
+                </div>
+                <div class="project-info">
+                    <h3>Corporate Portfolio</h3>
+                    <p style="margin-bottom: 15px; font-size: 0.9rem; color: var(--text-muted);">Modern brand identity
+                        website for a consultancy firm.</p>
+                    <div class="tags"><span>Website</span><span>Branding</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 style="margin-bottom: 30px;">Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-item"
+                    style="background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); color: white;">
+                    <img src="images/ul.webp" />
+
+                </div>
+
+
+                <div class="gallery-item"
+                    style="background: linear-gradient(to top, #c471f5 0%, #fa71cd 100%); color: white;"><img
+                        src="images/marketing.webp" />
+
+                </div>
+                <div class="gallery-item"
+                    style="background: linear-gradient(to right, #f83600 0%, #f9d423 100%); color: white;"><img
+                        src="images/strage.webp" />
+                </div>
+
+                <div class="gallery-item"
+                    style="background: linear-gradient(to top, #0ba360 0%, #3cba92 100%); color: white;">
+                    <img src="images/code.webp" />
+                </div>
+                <div class="gallery-item"
+                    style="background: linear-gradient(to top, #30cfd0 0%, #330867 100%); color: white;">
+                    <img src="images/server.webp" />
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Testimonials -->
+    <section class="container testimonials-section">
+        <h2 style="text-align: center; margin-bottom: 50px;">Client Testimonials</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <p>"Zalla Software transformed our business operations with their seamless OS installation and support.
+                    Highly recommended!"</p>
+                <div class="client-info">
+                    <div class="client-img" style="background: #ccc;">
+                        <img src="images/status-1.png" alt="">
+                    </div> <!-- Placeholder -->
+                    <div class="client-details">
+                        <h4>Abebe K.</h4>
+                        <span>CEO, TechCorp</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <p>"The team is incredibly professional. They recovered critical data we thought was lost forever."</p>
+                <div class="client-info">
+                    <div class="client-img" style="background: #999;">
+                        <img src="images/status-4.png" alt="">
+
+                    </div> <!-- Placeholder -->
+                    <div class="client-details">
+                        <h4>Sara M.</h4>
+                        <span>Manager, DesignStudio</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <i class="fas fa-quote-right quote-icon"></i>
+                <p>"Best service in town for software activation and maintenance. Quick and reliable."</p>
+                <div class="client-info">
+                    <div class="client-img" style="background: #555;">
+                        <img src="images/tesmonial.webp" alt="">
+
+                    </div> <!-- Placeholder -->
+                    <div class="client-details">
+                        <h4>Dawit T.</h4>
+                        <span>Freelancer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 class="logo">ZALLA SOFTWARE</h3>
+                    <p>Providing top-tier software solutions and maintenance for individuals and businesses alike.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="service.html">OS Installation</a></li>
+                        <li><a href="service.html">Software Activation</a></li>
+                        <li><a href="service.html">Web Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-icons" style="margin-top: 0;">
+                        <a href="#" class="social-icon" style="width: 35px; height: 35px; font-size: 1rem;"><i
+                                class="fab fa-telegram-plane"></i></a>
+                        <a href="#" class="social-icon" style="width: 35px; height: 35px; font-size: 1rem;"><i
+                                class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Zalla Software. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
+
+
+<!-- <section class="gallery-section">
+        <div class="container">
+            <h2 style="margin-bottom: 30px;">Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-item"
+                    style="background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); color: white;">UI Design >
+
+                </div>
+
+
+                <div class="gallery-item"
+                    style="background: linear-gradient(to top, #c471f5 0%, #fa71cd 100%); color: white;">Marketing</div>
+                <div class="gallery-item"
+                    style="background: linear-gradient(to right, #f83600 0%, #f9d423 100%); color: white;">Strategy
+                </div>
+
+                <div class="gallery-item"
+                    style="background: linear-gradient(to top, #0ba360 0%, #3cba92 100%); color: white;">
+                    Code</div>
+                <div class="gallery-item"
+                    style="background: linear-gradient(to top, #30cfd0 0%, #330867 100%); color: white;">
+                    Server</div>
+            </div>
+
+    </section> -->

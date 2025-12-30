@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Zalla Software</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-section {
+            padding: 120px 0 80px;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--glass-shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-info h2 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item i {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-top: 5px;
+        }
+
+        .info-item h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .info-item p,
+        .info-item a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Animated Button Specifics */
+        .btn-send {
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-send i {
+            transition: transform 0.3s;
+        }
+
+        .btn-send:hover i {
+            transform: translateX(5px) rotate(-45deg);
+        }
+
+        @media(max-width: 768px) {
+            .contact-wrapper {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">ZALLA SOFTWARE</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="service.html" class="nav-link">Service</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link active ">Contact</a></li>
+                <li><button id="signup-btn" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;">Sign
+                        Up</button></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sign Up Modal -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <i class="fas fa-times close-modal"></i>
+            <h2>Join Zalla Software</h2>
+            <form class="signup-form">
+                <div class="form-group"><input type="text" class="form-input" placeholder="Full Name" required></div>
+                <div class="form-group"><input type="email" class="form-input" placeholder="Email Address" required>
+                </div>
+                <div class="form-group"><input type="password" class="form-input" placeholder="Password" required></div>
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <section class="container contact-section">
+        <div class="contact-wrapper">
+            <!-- Left Side: Info -->
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p style="margin-bottom: 30px;">Have a project in mind or need technical support? We are just a message
+                    away.</p>
+
+                <div class="info-item">
+                    <i class="fab fa-telegram-plane"></i>
+                    <div>
+                        <h4>Telegram</h4>
+                        <a href="https://t.me/TesegaySH" target="_blank">@TesegaySH</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <p>MU, Arid Campus</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p><a href="tel:+251946351205">+251-94635-1205</a></p>
+                        <p><a href="tel:+251914951205">+251-91495-1205</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Form -->
+            <div class="contact-form">
+                <h2>Send Message</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="c-name" style="margin-bottom: 5px; display: block; font-weight: 500;">Your
+                            Name</label>
+                        <input type="text" id="c-name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="c-email" style="margin-bottom: 5px; display: block; font-weight: 500;">Email
+                            Address</label>
+                        <input type="email" id="c-email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="c-message"
+                            style="margin-bottom: 5px; display: block; font-weight: 500;">Message</label>
+                        <textarea id="c-message" class="form-input" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-send">Send Message<a
+                            href="https://www.telegram.org" class="social-icon"><i
+                                class="fab fa-telegram-plane"></i></a> </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- <i class="fas fa-paper-plane"></i> -->
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 class="logo">ZALLA SOFTWARE</h3>
+                    <p>Providing top-tier software solutions and maintenance for individuals and businesses alike.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="service.html">OS Installation</a></li>
+                        <li><a href="service.html">Software Activation</a></li>
+                        <li><a href="service.html">Web Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-icons" style="margin-top: 0;">
+                        <a href="#" class="social-icon" style="width: 35px; height: 35px; font-size: 1rem;"><i
+                                class="fab fa-telegram-plane"></i></a>
+                        <a href="#" class="social-icon" style="width: 35px; height: 35px; font-size: 1rem;"><i
+                                class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Zalla Software. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

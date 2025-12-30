@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zalla Software - Professional IT Solutions</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">ZALLA SOFTWARE</a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="service.html" class="nav-link">Service</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <button id="signup-btn" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;">Sign
+                        Up</button>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sign Up Modal -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <i class="fas fa-times close-modal"></i>
+            <h2>Join Zalla Software</h2>
+            <form class="signup-form">
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-input" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-input" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero" style="background-image: url('../hero_background_1766220545474.png');">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Software Solutions for <br> <span>Modern Businesses</span></h1>
+                <p>We build premium, high-performance websites and handle all your software needs. From OS installation
+                    to enterprise recovery, Zalla Software is your trusted partner.</p>
+
+                <div class="hero-btns">
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                    <a href="service.html" class="btn btn-secondary">Our Services</a>
+                </div>
+
+                <div class="social-icons">
+                    <a href="https://www.telegram.org" class="social-icon"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="https://www.facebook.com" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://www.youtube.com" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 class="logo">ZALLA SOFTWARE</h3>
+                    <p>Providing top-tier software solutions and maintenance for individuals and businesses alike.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="service.html">OS Installation</a></li>
+                        <li><a href="service.html">Software Activation</a></li>
+                        <li><a href="service.html">Data Recovery</a></li>
+                        <li><a href="service.html">Web Development</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-icons" style="margin-top: 0;">
+                        <a href="#" class="social-icon" style="width: 35px; height: 35px; font-size: 1rem;"><i
+                                class="fab fa-telegram-plane"></i></a>
+                        <a href="#" class="social-icon" style="width: 35px; height: 35px; font-size: 1rem;"><i
+                                class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Zalla Software. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

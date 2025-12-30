@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Zalla Software</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .services-header {
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .services-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .service-img {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .service-img img {
+            max-height: 100%;
+            width: auto;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .service-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .service-link i {
+            transition: transform 0.2s;
+        }
+
+        .service-card:hover .service-link i {
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">ZALLA SOFTWARE</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="service.html" class="nav-link active">Service</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><button id="signup-btn" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;">Sign
+                        Up</button></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sign Up Modal -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <i class="fas fa-times close-modal"></i>
+            <h2>Join Zalla Software</h2>
+            <form class="signup-form">
+                <div class="form-group"><input type="text" class="form-input" placeholder="Full Name" required></div>
+                <div class="form-group"><input type="email" class="form-input" placeholder="Email Address" required>
+                </div>
+                <div class="form-group"><input type="password" class="form-input" placeholder="Password" required></div>
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="services-header">
+            <h1>Our Premium Services</h1>
+            <p>We serve you wherever you are with rapid, reliable IT solutions.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- OS Installation -->
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="images/service_os_1766220560805.png" alt="OS Installation">
+                </div>
+                <h3>OS Installation</h3>
+                <p>Expert installation of Windows 10 & 11 ensuring maximum performance and stability for your machine.
+                </p>
+                <a href="contact.html" class="service-link">Get Support <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Office Installation -->
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="images/service_office_1766220575386.png" alt="Office Installation">
+                </div>
+                <h3>Office Package</h3>
+                <p>Full setup of Microsoft Office suite. Word, Excel, PowerPoint - ready for your business needs.</p>
+                <a href="contact.html" class="service-link">Get Support <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Activation -->
+            <div class="service-card">
+                <div class="service-img">
+                    <i class="fas fa-key" style="font-size: 4rem; color: var(--accent-color);"></i>
+                </div>
+                <h3>Software Activation</h3>
+                <p>Genuine activation services for Windows and any other software to unlock full features.</p>
+                <a href="contact.html" class="service-link">Get Support <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Virus Removal -->
+            <div class="service-card">
+                <div class="service-img">
+                    <i class="fas fa-shield-virus" style="font-size: 4rem; color: #ef4444;"></i>
+                </div>
+                <h3>Malware Removal</h3>
+                <p>Clean your system from malicious software and viruses. Restore security and speed.</p>
+                <a href="contact.html" class="service-link">Get Support <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Windows Recovery -->
+            <div class="service-card">
+                <div class="service-img">
+                    <i class="fas fa-undo" style="font-size: 4rem; color: #3b82f6;"></i>
+                </div>
+                <h3>Windows Recovery</h3>
+                <p>Recover lost data or restore corrupted systems. We bring your computer back to life.</p>
+                <a href="contact.html" class="service-link">Get Support <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Password Reset -->
+            <div class="service-card">
+                <div class="service-img">
+                    <i class="fas fa-lock-open" style="font-size: 4rem; color: var(--text-main);"></i>
+                </div>
+                <h3>Password Resetting</h3>
+                <p>Locked out? We can safely reset local account passwords without data loss.</p>
+                <a href="contact.html" class="service-link">Get Support <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 class="logo">ZALLA SOFTWARE</h3>
+                    <p>Providing top-tier software solutions and maintenance for individuals and businesses alike.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="service.html">OS Installation</a></li>
+                        <li><a href="service.html">Software Activation</a></li>
+                        <li><a href="service.html">Web Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-icons" style="margin-top: 0;">
+                        <a href="#" class="social-icon" style="width: 35px; height: 35px; font-size: 1rem;"><i
+                                class="fab fa-telegram-plane"></i></a>
+                        <a href="#" class="social-icon" style="width: 35px; height: 35px; font-size: 1rem;"><i
+                                class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Zalla Software. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
